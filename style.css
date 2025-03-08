@@ -1,5 +1,39 @@
+/* Generale */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+:root {
+    --Home:  rgba(23, 25, 48, 1);
+    --navbar: #A865C9;
+
+    --restart: linear-gradient(90deg, rgb(39, 0, 0) 0%, rgb(140, 0, 0) 100%);
+    --restart-back: #0e110eaf;
+
+    --text: white;
+    --text-dark: rgb(54, 54, 54);
+    --text-light: #c7c7c7;
+
+    --something: linear-gradient( 
+        rgba(238, 130, 238, 1)0%, 
+        rgba(35, 38, 73, 1)19%, 
+        rgba(23, 25, 48, 1)89%,
+        rgba(238, 130, 238, 1)100%);
+
+    --t1: #FF073A;
+    --t2: #4D4DFF;
+    --t3: #EE82EE;
+    --border: 0.1rem solid rgb(224, 224, 224);
+
+    --grid: radial-gradient(
+    rgba(29, 93, 236, 1) 0%,
+    rgba(17, 52, 156, 1) 57%,
+    rgba(7, 15, 84, 1) 100%);
+
+    --grid-l: #EE82EE;
+}
+
 body {
-background-color: rgba(23, 25, 48, 1);
+background-color: var(--Home);
 margin: auto 0;
 overflow: hidden; /* Évite le scroll */
 }
@@ -8,7 +42,7 @@ overflow: hidden; /* Évite le scroll */
 /* NavBar */
 
 nav {
-background-color: #A865C9;
+background-color: var(--navbar);
 position: fixed;
 width: 100%;
 z-index: inherit;
@@ -26,7 +60,9 @@ list-style: none;
 
 a {
 text-decoration: none;
-color: white;
+    color: var(--text);
+    font-size: 2em;
+    font-family: "Orbitron", sans-serif;
 }
 
 
@@ -46,13 +82,207 @@ width: 100%;
     flex-direction: column;
     gap: 60px;
     top: 50%;
-    left: 37%;
+    left: 37%; 
 }
 
 button {
-    background-color: violet;
+    background-color: var(--grid-l);
     width: 50vh;
     height: 6vh;
     border-radius: 20px;
 }
 
+
+
+/* Gampeplay Styling */
+
+.bod2 {
+    background: var(--Home);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+h1:hover, h2:hover{
+    cursor: default;
+}
+
+
+/* INFO */
+
+#info {
+    text-align: center;
+    width: 15rem;
+    color: var(--text);
+}
+
+#info__title {
+    font-size: 2rem;
+}
+
+.info__player {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: var(--border);
+    border-radius: 0.3rem;
+    color: var(--t3);
+    background: var(--grid);
+}
+
+.info__player-img {
+    height: 1.3rem;
+    padding-top: 0.13rem;
+}
+
+.cross {
+    background-image: url(./image/cross.svg);
+}
+
+.circle {
+    background-image: url(./image/circle.svg);
+}
+
+.cross, .circle {
+    background-size: cover;
+}
+
+/* Grid */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 25rem;
+    width: 25rem;
+    grid-gap: 0.4rem; 
+    /* 16px = 1rem */
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+    background: var(--grid-l);
+}
+
+.grid__square {
+    background: var(--grid);
+    border-radius: 0.3rem;
+    border: var(--border);
+}
+
+.grid__square:hover {
+    cursor: pointer;
+}
+
+/* Instructions */
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15rem;
+}
+
+#instructions__text {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+#instructions__btn {
+    cursor: pointer;
+    width: 10rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    /* border: var(--border); */
+    background: var(--t1);
+    color: var(--text);
+}
+
+#instructions__btn:active {
+    transform: translateY(0.175rem);
+}
+
+
+/* Modal */
+
+#modal {
+    display: none;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--restart-back);
+}
+
+#modal__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 65%;
+    width: 40%;
+    border-radius: 5rem;
+    color: var(--text);
+    background: var(--restart);
+    border: var(--restart-back) solid 0.1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: none;
+}
+
+input {
+    margin: 1.25rem;
+    font-size: 1rem;
+    border-radius: 2rem;
+    padding: 0.6rem 1.25rem;
+}
+
+::placeholder {
+    font-style: italic;
+}
+
+input[type="submit"] {
+    transform: translateY(0.215rem);
+}
+
+/* RESPONSIVE */
+
+
+@media (max-width: 1160px) {
+
+    /* Gameplay-page */
+    .bod2 {
+        align-items: center;
+    }
+    #grid {
+        height: 18.75rem;
+        width: 18.75rem;
+    }
+    #info__title {
+        margin: 0 0 1rem;
+    }
+    #modal__content {
+        text-align: center;
+        height: 50%;
+        width: 80%;
+    }
+    input {
+        width: 10rem;
+    }
+    
+}
