@@ -1,6 +1,4 @@
-/* Generale */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
+/* GENERALES */
 
 :root {
     --Home:  rgba(23, 25, 48, 1);
@@ -32,72 +30,10 @@
     --grid-l: #EE82EE;
 }
 
-body {
-background-color: var(--Home);
-margin: auto 0;
-overflow: hidden; /* Évite le scroll */
-}
+/* Hard-lvl-play */
 
-
-/* NavBar */
-
-nav {
-background-color: var(--navbar);
-position: fixed;
-width: 100%;
-z-index: inherit;
-}
-
-nav ul {
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-}
-
-nav ul li {
-list-style: none;
-}
-
-a {
-text-decoration: none;
-    color: var(--text);
-    font-size: 2em;
-    font-family: "Orbitron", sans-serif;
-}
-
-
-/* Section Game - page accueil */
-
-.Game-home {
-background-image: url(./image/Tic\ Tac\ Toe.webp);
-background-size: cover;
-background-position: center;
-height: 100vh;
-width: 100%;
-}
-
-.btn  {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    top: 50%;
-    left: 37%; 
-}
-
-button {
-    background-color: var(--grid-l);
-    width: 50vh;
-    height: 6vh;
-    border-radius: 20px;
-}
-
-
-
-/* Gampeplay Styling */
-
-.bod2 {
-    background: var(--Home);
+.bod3 {
+    background: var(--restart);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -157,17 +93,18 @@ h1:hover, h2:hover{
 }
 
 /* Grid */
+
 #grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 25rem;
-    width: 25rem;
-    grid-gap: 0.4rem; 
-    /* 16px = 1rem */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns instead of 3 */
+    height: 30rem; /* Increased size for the 4x4 grid */
+    width: 30rem; /* Increased size */
+    grid-gap: 0.4rem;
     padding: 0.4rem;
     border-radius: 0.5rem;
     background: var(--grid-l);
 }
+
 
 .grid__square {
     background-color: var(--Home);
@@ -200,7 +137,7 @@ h1:hover, h2:hover{
     padding: 0.5rem 1rem;
     font-size: 1rem;
     border-radius: 2rem;
-    /* border: var(--border); */
+    border: var(--border);
     background: var(--t1);
     color: var(--text);
 }
@@ -231,7 +168,7 @@ h1:hover, h2:hover{
     width: 40%;
     border-radius: 5rem;
     color: var(--text);
-    background: var(--restart);
+    background: var(--grid);
     border: var(--restart-back) solid 0.1rem;
 }
 
@@ -265,7 +202,7 @@ input[type="submit"] {
 
 @media (max-width: 1160px) {
 
-    /* Gameplay-page */
+    /* Gameplay-page/Hard-lvl-page */
     .bod2 {
         align-items: center;
     }
