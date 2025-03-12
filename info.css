@@ -1,0 +1,102 @@
+/* Generale */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+:root {
+    --Home:  rgba(23, 25, 48, 1);
+    --navbar: #A865C9;
+
+    --restart: linear-gradient(90deg, rgb(39, 0, 0) 0%, rgb(140, 0, 0) 100%);
+    --restart-back: #0e110eaf;
+
+    --text: white;
+    --text-dark: rgb(54, 54, 54);
+    --text-light: #c7c7c7;
+
+    --something: linear-gradient( 
+        rgba(238, 130, 238, 1)0%, 
+        rgba(35, 38, 73, 1)19%, 
+        rgba(23, 25, 48, 1)89%,
+        rgba(238, 130, 238, 1)100%);
+
+    --t1: #FF073A;
+    --t2: #4D4DFF;
+    --t3: #EE82EE;
+    --border: 0.1rem solid rgb(224, 224, 224);
+
+    --grid: radial-gradient(
+    rgba(29, 93, 236, 1) 0%,
+    rgba(17, 52, 156, 1) 57%,
+    rgba(7, 15, 84, 1) 100%);
+
+    --grid-l: #EE82EE;
+}
+
+/* NavBar */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: var(--Home);
+    color: var(--text);
+}
+
+nav {
+    background-color: var(--navbar);
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    }
+    
+    nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    }
+    
+    nav ul li {
+    list-style: none;
+    }
+    
+    a {
+    text-decoration: none;
+        color: var(--text);
+        font-size: 2em;
+        font-family: "Orbitron", sans-serif;
+    }
+
+
+
+.box {
+    position: absolute;
+    width: 65vw;
+    height:100vh;
+    padding: 5%;
+    background: var(--something);
+    right: 13.8%;
+    top: 7%;
+    z-index: -1;
+}
+
+
+#forum {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.4rem;
+}
+
+.lab {
+    font-size: 2rem;
+    font-family: "Orbitron", sans-serif;
+    color: var(--text);
+}
+
+.cage {
+    width: 50%;
+    height: 85%;
+    padding: 5%;
+
+}
+
